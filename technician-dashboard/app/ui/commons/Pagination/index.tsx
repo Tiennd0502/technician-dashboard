@@ -1,5 +1,6 @@
 'use client';
 
+import { getPageList } from '@/lib/utils';
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 import { Flex, Button } from '@chakra-ui/react';
 import React, { useCallback, useMemo } from 'react';
@@ -27,20 +28,7 @@ const Pagination = ({ total, page, onChange }: PaginationProps) => {
     onChange(total);
   }, [total, onChange]);
 
-  const pages = useMemo(() => {
-    if (page <= 4 || total < 8) {
-      if (total >= 8) {
-        return [2, 3, 4, 5, '...'];
-      } else {
-        const result = Array.from({ length: total }, (_, i) => i + 1);
-        return result.slice(1, result.length - 1);
-      }
-    } else if (total - page <= 3) {
-      return ['...', total - 4, total - 3, total - 2, total - 1];
-    } else {
-      return ['...', page - 1, page, page + 1, '...'];
-    }
-  }, [total, page]);
+  const pages = useMemo(() => getPageList(page, total), [total, page]);
 
   return (
     <Flex columnGap='2' justifyContent='flex-end' w='full' data-testid='list-page'>
