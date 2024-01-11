@@ -28,6 +28,8 @@
 
 - Estimated time: 7 days (Dec 28, 2023 - Jan 08, 2024)
 
+- Actual time: 9 days (Dec 28, 2023 - Jan 10, 2024)
+
 ## Time size
 
 - 1 dev
@@ -62,6 +64,8 @@
 
 - Users can sort products by name.
 
+- Users can change pages in the table.
+
 ## Requirements
 
 - [Node](https://nodejs.org/en/ "Node") >= 20.0.0 / [pnpm](https://pnpm.io/) >= 8.6.1
@@ -70,18 +74,16 @@
 
 #### Step by step to run this app in your local:
 
-1. `git clone -b technician-dashboard git@gitlab.asoft-python.com:g-tiennguyen/nextjs-training.git`
+| Command                                                                     | Action                                         |
+|:----------------------------------------------------------------------------|:-----------------------------------------------|
+| `git clone git@gitlab.asoft-python.com:tien.nguyen/nextjs-training.git`     | Download source code                           |
+| `cd nextjs-training`                                                        | Move to folder                                 |
+| `git checkout technician-dashboard`                                         | Move branch                                    |
+| `cd technician-dashboard`                                                   | Move to the folder containing the source code  |
+| `pnpm install`                                                              | Installs dependencies                          |
+| `pnpm test`                                                                 | Run test                                       |
+| `pnpm storybook`                                                            | Preview UI component: `http://localhost:6006`  |
+| `pnpm dev`                                                                  | Starts local dev server at `localhost:3000`    |
+| `pnpm start`                                                                | Preview your build locally: `localhost:3000`   |
 
-2. `cd technician-dashboard`
-
-3. Create a .env similar with .env.example (contact to me to get information of environment variable - Email: tien.nguyen@asnet.com.vn)
-
-3. `pnpm install`
-
-4. Run app: `pnpm dev`
-
-5. Open on web: http://localhost:3000
-
-6. Run storybook: pnpm storybook
-
-7. Open on web: http://localhost:6006
+> Note: Before running `pnpm dev` or `pnpm start`: create .env.local with .env.example (contact to me to get information of environment variable - Email: tien.nguyen@asnet.com.vn)
