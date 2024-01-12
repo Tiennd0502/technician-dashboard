@@ -1,13 +1,7 @@
 import { Box, Heading, Text } from '@chakra-ui/react';
 import Image from 'next/image';
 
-import { TECHNICIAN_URL } from '@/lib/constants';
-
-interface TechnicianProps {
-  src?: string;
-}
-
-const Technician = ({ src = TECHNICIAN_URL }: TechnicianProps) => (
+const Technician = () => (
   <Box p='7' borderWidth='1px' borderColor='border.primary' borderRadius='md' height='100%'>
     <Heading variant='headingXl'>Add Technicians</Heading>
     <Text as='p' variant='textXxs'>
@@ -19,7 +13,7 @@ const Technician = ({ src = TECHNICIAN_URL }: TechnicianProps) => (
     </Text>
     <Box maxW='500px' m='0 auto'>
       <Image
-        src={src}
+        src='/images/technician.webp'
         alt='Technicians'
         style={{
           width: '100%',
@@ -28,7 +22,7 @@ const Technician = ({ src = TECHNICIAN_URL }: TechnicianProps) => (
         width={326}
         height={300}
         layout='responsive'
-        blurDataURL={src}
+        blurDataURL='/images/technician.webp'
         placeholder='blur'
         priority
       />

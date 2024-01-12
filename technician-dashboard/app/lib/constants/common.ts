@@ -2,10 +2,6 @@ export const LOGO_URL = '/images/technician.svg';
 
 export const AVATAR_DEFAULT = '/images/empty-avatar.svg';
 
-export const PRODUCT_STATISTICS_URL = 'https://i.ibb.co/CH5rb0L/total-product.webp';
-
-export const TECHNICIAN_URL = 'https://i.ibb.co/qMWPNmx/technician.webp';
-
 export const CURRENCY_CHARACTERS = {
   EURO: '€',
 };
