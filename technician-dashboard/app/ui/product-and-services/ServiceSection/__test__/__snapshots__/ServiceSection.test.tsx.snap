@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ServiceSection test cases should render correctly 1`] = `
+<div>
+  <div
+    class="css-171xrfe"
+  >
+    <h2
+      class="chakra-heading css-1dklj6k"
+    >
+      About Services
+    </h2>
+    <div
+      class="css-166re2f"
+      data-testid="list-services"
+    />
+    <div
+      class="css-166re2f"
+      data-testid="list-category"
+    />
+  </div>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</div>
+`;
