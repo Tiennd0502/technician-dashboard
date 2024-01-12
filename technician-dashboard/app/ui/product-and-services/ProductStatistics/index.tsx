@@ -1,15 +1,10 @@
 import { Flex, Heading, Text, Button, Box } from '@chakra-ui/react';
 import Image from 'next/image';
 
-import { PRODUCT_STATISTICS_URL } from '@/lib/constants';
 import { StatusLabel } from '@/ui/commons';
 import { STATUS } from '@/lib/interfaces';
 
-interface ProductStatisticsProps {
-  src?: string;
-}
-
-const ProductStatistics = ({ src = PRODUCT_STATISTICS_URL }: ProductStatisticsProps) => (
+const ProductStatistics = () => (
   <Flex
     flexDirection='column'
     justifyContent='space-between'
@@ -32,7 +27,7 @@ const ProductStatistics = ({ src = PRODUCT_STATISTICS_URL }: ProductStatisticsPr
       </Box>
       <Box alignSelf='center' flexBasis={{ base: '200px', md: '320px' }}>
         <Image
-          src={src}
+          src='/images/total-product.webp'
           alt='Total product'
           style={{
             width: '100%',
@@ -40,7 +35,7 @@ const ProductStatistics = ({ src = PRODUCT_STATISTICS_URL }: ProductStatisticsPr
           }}
           width={200}
           height={180}
-          blurDataURL={src}
+          blurDataURL='/images/total-product.webp'
           placeholder='blur'
           priority
         />
