@@ -1,15 +1,15 @@
 import { ThemeOverride } from '@chakra-ui/react';
-import { Advent_Pro } from 'next/font/google';
+import { Roboto } from 'next/font/google';
 
-const adventPro = Advent_Pro({
+const roboto = Roboto({
   weight: ['500', '700'],
   subsets: ['latin'],
   display: 'swap',
 });
 
 export const fonts = {
-  primary: `${adventPro.style.fontFamily}, sans-serif`,
-  secondary: `${adventPro.style.fontFamily}, sans-serif`,
+  primary: `${roboto.style.fontFamily}, sans-serif`,
+  secondary: `${roboto.style.fontFamily}, sans-serif`,
 };
 
 export const fontSizes: ThemeOverride['fontSizes'] = {
