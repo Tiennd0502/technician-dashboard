@@ -2,8 +2,6 @@
 
 import React, { useCallback, useMemo, useState } from 'react';
 import { Box, Button, Flex, Heading, VStack, useDisclosure, useToast } from '@chakra-ui/react';
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 
 // Types
 import { Filter, Product, STATUS, TableData } from '@/lib/interfaces';
@@ -23,7 +21,6 @@ import ProductForm from '../ProductForm';
 import { useFetchProducts, useProduct } from '@/lib/hooks';
 
 const ProductTable = () => {
-  const router = useRouter();
   const toast = useToast();
 
   const [productEdit, setProductEdit] = useState<Product>();
