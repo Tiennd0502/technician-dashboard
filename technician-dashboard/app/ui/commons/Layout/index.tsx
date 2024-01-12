@@ -1,7 +1,7 @@
 'use client';
 
 import { FC, ReactNode, useEffect, useMemo, useState } from 'react';
-import { Grid, GridItem, useMediaQuery } from '@chakra-ui/react';
+import { Box, Grid, GridItem, useMediaQuery } from '@chakra-ui/react';
 
 import { MENU_ITEM_LIST, HEADER_INFO } from '@/lib/constants';
 
@@ -58,7 +58,9 @@ const Layout: FC<{ children: ReactNode }> = ({ children }) => {
       <GridItem area='main'>{children}</GridItem>
     </Grid>
   ) : (
-    <Spinner />
+    <Box mt='50px'>
+      <Spinner />
+    </Box>
   );
 };
 

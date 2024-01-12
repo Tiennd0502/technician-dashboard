@@ -2,14 +2,12 @@ import { Flex, Box } from '@chakra-ui/react';
 import { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 
-// Components
-import { ServiceSection } from '@/ui/product-and-services';
-
+const ServiceSection = dynamic(() => import('@/ui/product-and-services/ServiceSection'));
 const ProductStatistics = dynamic(() => import('@/ui/product-and-services/ProductStatistics'));
+const Technician = dynamic(() => import('@/ui/product-and-services/Technician'));
 const ProductTable = dynamic(() => import('@/ui/product-and-services/ProductTable'), {
   ssr: false,
 });
-const Technician = dynamic(() => import('@/ui/product-and-services/Technician'));
 
 const Page = () => (
   <Box px='5'>

@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 
 import { Provider } from '@/lib/providers';
-import { Layout } from '@/ui/commons';
 
 export const metadata: Metadata = {
   title: 'Technician Dashboard',
@@ -16,9 +15,7 @@ const RootLayout = ({ children }: RootLayoutProps) => {
   return (
     <html lang='en'>
       <body>
-        <Provider>
-          <Layout>{children}</Layout>
-        </Provider>
+        <Provider>{children}</Provider>
       </body>
     </html>
   );
