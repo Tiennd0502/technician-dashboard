@@ -9,8 +9,8 @@ import { generateQuery } from '@/lib/utils';
 export const useFetchProducts = (filter: Filter) =>
   useQuery({
     queryKey: ['products', generateQuery(filter)],
-    queryFn: () =>
-      APIs.get<Product[]>(`${API_ROUTES.PRODUCT}${filter ? generateQuery(filter) : ''}`),
+    queryFn: () => APIs.get<Product[]>(`${API_ROUTES.PRODUCT}${generateQuery(filter)}`),
+    retry: false,
   });
 
 export const useFetchProduct = (id: string) =>
