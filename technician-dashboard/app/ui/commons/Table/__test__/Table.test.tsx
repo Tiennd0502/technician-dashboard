@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import * as mediaQueryHooks from '@chakra-ui/react';
 
 import { DEFAULT_PRODUCT_FILTER, NO_DATA, PRODUCTS } from '@/lib/constants';
@@ -101,5 +101,43 @@ describe('Table test cases', () => {
     fireEvent.click(button);
 
     expect(onDelete).toHaveBeenCalled();
+  });
+
+  test('should render correctly when being clicked sort asc', () => {
+    const props = {
+      filter: {
+        sortBy: 'name',
+        order: SORT_TYPE.Desc,
+      },
+      columns: columns,
+      data: PRODUCTS,
+    };
+
+    const { container } = render(<Table {...props} />);
+    waitFor(() => {
+      const button = screen.queryByTestId('sort-asc') as HTMLElement;
+      fireEvent.click(button);
+      expect(onSort).toHaveBeenCalled();
+      expect(container).toMatchSnapshot();
+    });
+  });
+
+  test('should render correctly when being clicked sort desc', () => {
+    const props = {
+      filter: {
+        sortBy: 'name',
+        order: SORT_TYPE.Asc,
+      },
+      columns: columns,
+      data: PRODUCTS,
+    };
+
+    const { container } = render(<Table {...props} />);
+    waitFor(() => {
+      const button = screen.queryByTestId('sort-desc') as HTMLElement;
+      fireEvent.click(button);
+      expect(onSort).toHaveBeenCalled();
+      expect(container).toMatchSnapshot();
+    });
   });
 });
