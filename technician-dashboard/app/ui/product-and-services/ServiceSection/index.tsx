@@ -38,13 +38,14 @@ const ServiceSection = ({ width, ...props }: ServiceSectionProps) => {
       borderColor='border.primary'
       borderRadius='md'
       p='7'
+      minH='315px'
       order={{
         md: 1,
         xl: 1,
       }}
       {...props}
     >
-      <Heading>About Services</Heading>
+      <Heading variant={{ base: 'headingLg', lg: 'headingXl' }}>About Services</Heading>
       {isLoading ? (
         <Flex h='full' justifyContent='center'>
           <Spinner />

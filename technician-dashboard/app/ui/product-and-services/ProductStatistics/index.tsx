@@ -18,23 +18,23 @@ const ProductStatistics = () => (
       <Heading as='h3' variant='headingXl'>
         Total Products
       </Heading>
-      <Text variant='text3Xl'>350</Text>
+      <Text variant={{ base: 'textLg', lg: 'text3Xl' }}>350</Text>
     </Flex>
     <Flex justifyContent='center' w='full' gap='2' mt='4'>
       <Box mt='auto' mb={{ base: '5', md: '0', lg: '7' }}>
         <Text>285</Text>
         <Text variant='textXs'>Activated</Text>
       </Box>
-      <Box alignSelf='center' flexBasis={{ base: '200px', md: '320px' }}>
+      <Box alignSelf='center' minW='150' maxW='250px'>
         <Image
           src='/images/total-product.webp'
           alt='Total product'
           style={{
-            width: '100%',
+            width: 'max-content',
             height: 'auto',
           }}
-          width={200}
-          height={180}
+          width={150}
+          height={130}
           blurDataURL='/images/total-product.webp'
           placeholder='blur'
           priority

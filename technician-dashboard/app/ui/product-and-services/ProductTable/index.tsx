@@ -205,19 +205,23 @@ const ProductTable = () => {
           onClose={handleCloseConfirmModal}
         />
       )}
-      <Flex justifyContent='space-between' alignItems='center' w='full'>
-        <Heading variant='headingLg' mr='auto'>
+      <Flex
+        gap={{ base: 4, md: 2, lg: 0 }}
+        justifyContent='space-between'
+        alignItems='center'
+        w='full'
+        flexWrap='wrap'
+      >
+        <Heading variant='headingLg' mr='auto' w={{ base: '100%', lg: '25%' }}>
           Products listing
         </Heading>
-        <Box minW='200px' ml='auto' mr='4'>
+        <Box minW='200px' w={{ base: '100%', md: '50%', lg: '40%' }}>
           <SearchBox onSearch={handleSearchProduct} />
         </Box>
-        <Button as={Flex} gap='4' variant='outline' mr='0'>
+        <Button as={Flex} gap='4' variant='outline' ml={{ md: 'auto' }} mr={{ md: 4 }}>
           Filter <FilterIcon />
         </Button>
-        <Button ml='4' onClick={onToggleForm}>
-          Add new
-        </Button>
+        <Button onClick={onToggleForm}>Add new</Button>
       </Flex>
 
       {isLoading ? (

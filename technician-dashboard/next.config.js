@@ -10,10 +10,9 @@ const nextConfig = {
       },
     ],
     deviceSizes: [425, 576, 769, 992, 1200, 1920],
-    imageSizes: [190, 240, 330, 450],
+    imageSizes: [ 120, 150, 190, 240, 350],
     minimumCacheTTL: 90,
   },
-  productionBrowserSourceMaps: true,
 }
 
 module.exports = nextConfig
