@@ -6,15 +6,15 @@ exports[`Product Table test cases should render correctly 1`] = `
     class="chakra-stack css-1sawn9g"
   >
     <div
-      class="css-lxyyt8"
+      class="css-c7dwok"
     >
       <h2
-        class="chakra-heading css-5c6m2r"
+        class="chakra-heading css-huystf"
       >
         Products listing
       </h2>
       <div
-        class="css-1xspvbw"
+        class="css-12olhs5"
       >
         <div
           class="chakra-input__group css-1y0e7gb"
@@ -43,7 +43,7 @@ exports[`Product Table test cases should render correctly 1`] = `
         </div>
       </div>
       <div
-        class="chakra-button css-1ni86vx"
+        class="chakra-button css-1ti8ltj"
       >
         Filter 
         <svg
@@ -74,7 +74,7 @@ exports[`Product Table test cases should render correctly 1`] = `
         </svg>
       </div>
       <button
-        class="chakra-button css-1xlie69"
+        class="chakra-button css-ez23ye"
         type="button"
       >
         Add new

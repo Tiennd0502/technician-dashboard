@@ -7,13 +7,14 @@ export const Heading = defineStyleConfig({
     fontFamily: 'primary',
   },
   variants: {
+    headingMd: {
+      fontSize: 'md',
+    },
     headingLg: {
       fontSize: 'lg',
-      fontWeight: 'bold',
     },
     headingXl: {
       fontSize: 'xl',
-      fontWeight: 'bold',
     },
     heading2Xl: {
       fontSize: '2xl',
