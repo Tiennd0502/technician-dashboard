@@ -2,31 +2,35 @@
 
 import React, { memo } from 'react';
 import { Flex, FlexProps, Heading, LayoutProps } from '@chakra-ui/react';
+import { useQuery } from '@tanstack/react-query';
 
 // Types
 import { Category, Service } from '@/lib/interfaces';
 
 // Constants
-import { API_ROUTES } from '@/lib/constants';
+import { API_ROUTES, QUERY_KEYS } from '@/lib/constants';
 
 // Components
 import { Spinner } from '@/ui/commons';
 import { Categories, ServiceList } from '@/ui/product-and-services';
 
-// Hooks
-import { useFetchServices } from '@/lib/hooks';
+// Utils
+import { getCategories, getServices } from '@/lib/utils/services';
 
 interface ServiceSectionProps extends FlexProps {
   width: LayoutProps['w'];
 }
 
 const ServiceSection = ({ width, ...props }: ServiceSectionProps) => {
-  const [
-    { data: services = [], isLoading: isServiceLoading },
-    { data: categories = [], isLoading: isBrandsLoading },
-  ] = useFetchServices<[Service[], Category[]]>([API_ROUTES.SERVICES, API_ROUTES.CATEGORIES]);
+  const { data: categories = [] } = useQuery({
+    queryKey: QUERY_KEYS.CATEGORIES,
+    queryFn: () => getCategories(),
+  });
 
-  const isLoading = isServiceLoading || isBrandsLoading;
+  const { data: services = [] } = useQuery({
+    queryKey: QUERY_KEYS.SERVICES,
+    queryFn: () => getServices(),
+  });
 
   return (
     <Flex
@@ -46,16 +50,8 @@ const ServiceSection = ({ width, ...props }: ServiceSectionProps) => {
       {...props}
     >
       <Heading variant={{ base: 'headingLg', lg: 'headingXl' }}>About Services</Heading>
-      {isLoading ? (
-        <Flex h='full' justifyContent='center'>
-          <Spinner />
-        </Flex>
-      ) : (
-        <>
-          <ServiceList list={services as Service[]} />
-          <Categories list={categories as Category[]} />
-        </>
-      )}
+      <ServiceList list={services as Service[]} />
+      <Categories list={categories as Category[]} />
     </Flex>
   );
 };

@@ -47,7 +47,7 @@ exports[`ProductStatistics test cases should render correctly 1`] = `
           height="130"
           src="/_next/image?url=%2Fimages%2Ftotal-product.webp&w=384&q=75"
           srcset="/_next/image?url=%2Fimages%2Ftotal-product.webp&w=256&q=75 1x, /_next/image?url=%2Fimages%2Ftotal-product.webp&w=384&q=75 2x"
-          style="color: transparent; width: 100%; height: auto; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"
+          style="color: transparent; height: auto; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"
           width="150"
         />
       </div>
