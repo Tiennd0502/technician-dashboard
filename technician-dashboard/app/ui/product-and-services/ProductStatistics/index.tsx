@@ -30,11 +30,11 @@ const ProductStatistics = () => (
           src='/images/total-product.webp'
           alt='Total product'
           style={{
-            width: 'max-content',
+            width: '100%',
             height: 'auto',
           }}
-          width={150}
-          height={130}
+          width={200}
+          height={180}
           blurDataURL='/images/total-product.webp'
           placeholder='blur'
           priority
